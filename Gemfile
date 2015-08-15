@@ -7,7 +7,8 @@ ruby '2.0.0'
 gem 'rails', '4.0.5'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', groups: %w(test development), require: false
+gem 'pg', groups: %w(production), require: false
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -48,8 +49,8 @@ end
 # gem 'debugger', group: [:development, :test]
 
 
-group :production do
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
-end
+#group :production do
+#  gem 'pg', '0.15.1'
+#  gem 'rails_12factor', '0.0.2'
+#end
 
